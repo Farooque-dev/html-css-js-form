@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form and Table</title>
+    <link rel="stylesheet" href="formStyle.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form onsubmit="formSubmit(event)">
+        <div class="form-row">
+          <div class="first">
+            <label for="fname">First name:</label>
+            <input
+              type="text"
+              id="fname"
+              name="fname"
+              title="only text"
+              placeholder="Enter first name"
+              autofocus
+            />
+            <span id="firstNameError" class="error-message"></span>
+          </div>
+          <div class="last">
+            <label for="lname">Last name:</label>
+            <input
+              type="text"
+              id="lname"
+              name="lname"
+              title="only text"
+              placeholder="Enter last name"
+            />
+            <span id="lastNameError" class="error-message"></span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="email">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter email"
+            />
+            <span id="emailError" class="error-message"></span>
+          </div>
+          <div class="select">
+            <label for="city">City:</label>
+            <select name="city" id="city">
+              <option value="" selected disabled hidden>Select a city</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Bangalore">Bangalore</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Jaipur">Jaipur</option>
+            </select>
+            <span id="cityError" class="error-message"></span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="radio-group">
+            <div class="radio-values">
+              <label id="gender-label">Gender:</label>
+              <input type="radio" id="male" value="Male" name="gender" />
+              <label for="male" class="label">Male</label>
+              <input type="radio" id="female" value="Female" name="gender" />
+              <label for="female" class="label">Female</label>
+              <input type="radio" id="other" value="Other" name="gender" />
+              <label for="other" class="label">Other</label>
+            </div>
+            <span id="genderError" class="error-message"></span>
+          </div>
+          <div class="checkbox-group">
+            <div class="checkbox-values">
+              <label id="courses-label">Courses:</label>
+              <input type="checkbox" id="html" name="courses" value="HTML" />
+              <label for="html" class="label">HTML</label>
+              <input type="checkbox" id="css" name="courses" value="CSS" />
+              <label for="css" class="label">CSS</label>
+              <input
+                type="checkbox"
+                id="js"
+                name="courses"
+                value="JavaScript"
+              />
+              <label for="js" class="label">JavaScript</label>
+            </div>
+            <span id="coursesError" class="error-message"></span>
+          </div>
+        </div>
+        <div class="buttons">
+          <button value="Submit" id="submitButton" type="submit">Submit</button>
+          <input
+            type="reset"
+            value="Reset"
+            id="resetButton"
+            onclick="resetError()"
+          />
+        </div>
+      </form>
+    </div>
+    <br />
+    <div class="table">
+      <table id="employee" style="display: none;">
+        <thead>
+          <tr>
+            <th>S. No.</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>City</th>
+            <th>Courses</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <script src="submitForm.js"></script>
+  </body>
+</html>
